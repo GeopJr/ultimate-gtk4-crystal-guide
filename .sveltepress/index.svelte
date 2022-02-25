@@ -59,7 +59,7 @@
 				class="sp--link"
 				property="dct:title"
 				rel="cc:attributionURL"
-				href="https://geopjr.github.io/ultimate-gtk4-crystal-guide/">Ultimate GTK4 Crystal Guide</a
+				href="https://ultimate-gtk4-crystal-guide.geopjr.dev">Ultimate GTK4 Crystal Guide</a
 			>
 			by
 			<a

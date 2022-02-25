@@ -67,3 +67,4 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./tempsp/build
           force_orphan: true
+          cname: ultimate-gtk4-crystal-guide.geopjr.dev
