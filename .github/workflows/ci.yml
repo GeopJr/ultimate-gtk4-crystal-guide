@@ -36,7 +36,7 @@ jobs:
           # Edit some files
           sed -i 's/company="Svelte" platformName="Press"/company="Ultimate GTK4 Crystal" platformName="Guide"/g' ./tempsp/src/lib/SveltePress/theme/components/navbar.svelte
           sed -i 's/class="sp--sidebar-grandparent" text={getName(valueP)}/class="sp--sidebar-grandparent" text={"UG4CG - " + getName(valueP)}/g' ./tempsp/src/lib/SveltePress/theme/components/sidebar.svelte
-          sed -i 's/adapter: vercel()/adapter: staticAdptr()/g' ./tempsp/svelte.config.js
+          sed -i 's/adapter: vercel()/adapter: netlify()/g' ./tempsp/svelte.config.js
 
           # Build it
           cd tempsp
@@ -57,14 +57,14 @@ jobs:
           pnpm run pandoc
           pnpm run pandoc -- -o pdf
           cd ../
-          # Move to end build
-          mv -f ./pandoc/output/0.epub ./build/guide.epub
-          mv -f ./pandoc/output/0.pdf ./build/guide.pdf
+          # Move to static
+          mv -f ./pandoc/output/0.epub ./static/guide.epub
+          mv -f ./pandoc/output/0.pdf ./static/guide.pdf
+          rm -rf ./pandoc ./.netlify README.md
       - name: Push to pages
         uses: peaceiris/actions-gh-pages@v3
         if: ${{ github.ref == 'refs/heads/main' }}
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./tempsp/build
+          publish_dir: ./tempsp/
           force_orphan: true
-          cname: ultimate-gtk4-crystal-guide.geopjr.dev
