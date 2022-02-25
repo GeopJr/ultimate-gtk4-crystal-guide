@@ -1,0 +1,69 @@
+name: Build
+on: [push, pull_request]
+
+jobs:
+  build:
+    runs-on: ubuntu-18.04
+    env:
+      npm_execpath: pnpm
+    steps:
+      - uses: actions/checkout@v2
+      - uses: pnpm/action-setup@v2
+        with:
+          version: 6.32.1
+      - uses: actions/setup-node@v3.0.0
+        with:
+          node-version: '17.6.0'
+      - name: Build
+        run: |
+          # Install pandoc & deps
+          sudo apt update -y && sudo apt install pandoc texlive-latex-base texlive-fonts-recommended texlive-fonts-extra texlive-latex-extra texlive-xetex -y
+
+          # Create empty SveltePress project
+          npx create-sveltepress-app create ./tempsp
+
+          # Remove defaults
+          rm ./tempsp/static/ -rf
+          rm ./tempsp/pages/ -rf
+
+          # Move the local files to the new project
+          mv ./static ./tempsp/static/
+          mv ./pages ./tempsp/pages/ 
+          mv -f .sveltepress/app.html ./tempsp/src/
+          mv -f .sveltepress/index.svelte ./tempsp/src/lib/SveltePress/theme/
+          mv -f .sveltepress/sveltePress.config.js ./tempsp/src/lib/SveltePress/
+
+          # Edit some files
+          sed -i 's/company="Svelte" platformName="Press"/company="Ultimate GTK4 Crystal" platformName="Guide"/g' ./tempsp/src/lib/SveltePress/theme/components/navbar.svelte
+          sed -i 's/class="sp--sidebar-grandparent" text={getName(valueP)}/class="sp--sidebar-grandparent" text={"UG4CG - " + getName(valueP)}/g' ./tempsp/src/lib/SveltePress/theme/components/sidebar.svelte
+          sed -i 's/adapter: vercel()/adapter: staticAdptr()/g' ./tempsp/svelte.config.js
+
+          # Build it
+          cd tempsp
+          npx create-sveltepress-app add --pandoc
+          pnpm i --ignore-scripts --no-frozen-lockfile
+          node scripts/prepareTheme.js
+          pnpm i --ignore-scripts --no-frozen-lockfile
+          node scripts/generateSymlinks.js
+          ## Create placeholder files so SvelteKit doesn't complain
+          touch ./static/guide.epub ./static/guide.pdf
+          pnpm run build
+
+          # Generate pandoc epub and pdf
+          cd pandoc
+          sed -i 's/pandoc/pandoc --latex-engine=xelatex/g' ./runPandoc.js
+          pnpm i
+          pnpm run prepare
+          pnpm run pandoc
+          pnpm run pandoc -- -o pdf
+          cd ../
+          # Move to end build
+          mv -f ./pandoc/output/0.epub ./build/guide.epub
+          mv -f ./pandoc/output/0.pdf ./build/guide.pdf
+      - name: Push to pages
+        uses: peaceiris/actions-gh-pages@v3
+        if: ${{ github.ref == 'refs/heads/main' }}
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./tempsp/build
+          force_orphan: true
