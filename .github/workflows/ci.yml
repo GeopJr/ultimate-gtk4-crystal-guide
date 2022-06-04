@@ -17,7 +17,8 @@ jobs:
           node-version: '17.7.1'
       - name: Build
         run: |
-          pnpm dev:build
+          pnpm i
+          pnpm docs:build
       - name: Push to pages
         uses: peaceiris/actions-gh-pages@v3
         with:

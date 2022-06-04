@@ -1,16 +1,11 @@
 {
   "name": "ultimate-gtk4-crystal-guide",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
   "scripts": {
     "docs:dev": "vitepress dev docs",
     "docs:build": "vitepress build docs",
     "docs:serve": "vitepress serve docs"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
   "devDependencies": {
     "vitepress": "1.0.0-alpha.1"
   },
