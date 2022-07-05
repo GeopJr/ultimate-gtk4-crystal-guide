@@ -2,12 +2,11 @@ export default {
     title: 'Ultimate GTK4 Crystal Guide',
     description: 'Learn how to create premium GTK4 apps in Crystal',
     lastUpdated: true,
-    editLink: {
-        repo: 'GeopJr/ultimate-gtk4-crystal-guide',
-        dir: 'docs',
-        text: 'Edit this page on GitHub'
-    },
     themeConfig: {
+        editLink: {
+            pattern: 'https://github.com/GeopJr/ultimate-gtk4-crystal-guide/edit/main/docs/:path',
+            text: 'Edit this page on GitHub'
+        },
         footer: {
             message: 'Released under a Creative Commons Zero v1.0 Universal License'
         },
