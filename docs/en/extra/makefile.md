@@ -9,7 +9,12 @@ PREFIX ?= /usr
 PO_LOCATION ?= po # location of .po files
 LOCALE_LOCATION ?= /share/locale # PREFIX + LOCALE_LOCATION = where the .mo are going to be moved
 
-all: gresource desktop metainfo build
+all: desktop metainfo bindings build
+
+# Generate bindings on the fly
+bindings: 
+	$(CRYSTAL_LOCATION)shards install
+	./bin/gi-crystal
 
 # Build command setting MY_APP_LOCALE_LOCATION to the above mentioned path, using a custom CRYSTAL_LOCATION if any and building with parallelism, release and no-debug
 build:

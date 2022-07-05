@@ -89,12 +89,14 @@ While it does look a bit messy, it covers everything needed. Dependencies genera
 		{
 			"name": "tinystats",
 			"buildsystem": "simple",
+			"build-options": {
+        		"append-path": "/run/build/tinystats/crystal/bin/"
+      		},
 			"build-commands": [
 				"for i in ./lib/*/; do ln -snf \"..\" \"$i/lib\"; done",
-				"cd lib/gi-crystal && ../../crystal/bin/crystal build src/generator/main.cr --no-debug --release && cd ../..",
-				"mkdir ./bin && cp lib/gi-crystal/main ./bin/gi-crystal && ./bin/gi-crystal || true",
-				"glib-compile-resources --sourcedir data --target data/dev.geopjr.tinystats.gresource data/dev.geopjr.tinystats.gresource.xml",
-				"TINY_LOCALE_LOCATION=\"/app/share/locale\" ./crystal/bin/crystal build ./src/tiny-stats.cr -Dpreview_mt --no-debug --release",
+        		"cd lib/gi-crystal && crystal build src/generator/main.cr && cd ../.. && mkdir ./bin && cp lib/gi-crystal/main ./bin/gi-crystal",
+        		"./bin/gi-crystal",
+				"TINY_LOCALE_LOCATION=\"/app/share/locale\" crystal/bin/crystal build ./src/tiny-stats.cr -Dpreview_mt --no-debug --release",
 				"msgfmt --xml --template data/dev.geopjr.tinystats.metainfo.xml.in -d \"./po\" -o data/dev.geopjr.tinystats.metainfo.xml",
 				"msgfmt --desktop --template data/dev.geopjr.tinystats.desktop.in -d \"./po\" -o data/dev.geopjr.tinystats.desktop",
 				"mkdir -p po/mo && for lang in `cat \"po/LINGUAS\"`; do if [[ \"$lang\" == 'en' || \"$lang\" == '' ]]; then continue; fi; mkdir -p \"/app/share/locale/$lang/LC_MESSAGES\"; msgfmt \"po/$lang.po\" -o \"po/mo/$lang.mo\";  install -D -m 0644 \"po/mo/$lang.mo\" \"/app/share/locale/$lang/LC_MESSAGES/dev.geopjr.tinystats.mo\"; done"
@@ -124,8 +126,8 @@ While it does look a bit messy, it covers everything needed. Dependencies genera
 				{
 					"type": "archive",
 					"dest": "crystal/",
-					"url": "https://github.com/crystal-lang/crystal/releases/download/1.3.2/crystal-1.3.2-1-linux-x86_64.tar.gz",
-					"sha256": "6e102e55d658f2cc0c56d23fcb50bd2edbd98959aa6b59b8e1210c6860651ed4"
+					"url": "https://github.com/crystal-lang/crystal/releases/download/1.4.1/crystal-1.4.1-1-linux-x86_64.tar.gz",
+          			"sha256": "a5bdf1b78897b3cdc7d715b5f7adff79e84401d39b7ab546ab3249dc17fc770c"
 				},
 				{
 					"type": "git",
@@ -135,15 +137,15 @@ While it does look a bit messy, it covers everything needed. Dependencies genera
 				},
 				{
 					"type": "git",
-					"url": "https://github.com/hugopl/gi-crystal.git",
-					"commit": "6100e4dc0786fc505cf9b57146c3cc3ddf2512a4",
-					"dest": "lib/gi-crystal"
+          			"url": "https://github.com/hugopl/gi-crystal.git",
+          			"tag": "v0.13.1",
+          			"dest": "lib/gi-crystal"
 				},
 				{
 					"type": "git",
 					"url": "https://github.com/hugopl/gtk4.cr.git",
-					"commit": "16a3b79866e0af18e95681ca2842d8428ac6e152",
-					"dest": "lib/gtk4"
+          			"tag": "v0.11.1",
+          			"dest": "lib/gtk4"
 				},
 				{
 					"type": "git",
@@ -154,8 +156,8 @@ While it does look a bit messy, it covers everything needed. Dependencies genera
 				{
 					"type": "git",
 					"url": "https://github.com/geopjr/non-blocking-spawn.git",
-					"tag": "v1.0.0",
-					"dest": "lib/non-blocking-spawn"
+          			"tag": "v1.0.2",
+          			"dest": "lib/non-blocking-spawn"
 				},
 				{
 					"type": "git",
