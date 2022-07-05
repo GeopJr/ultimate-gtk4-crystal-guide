@@ -31,7 +31,21 @@ And now you can load them as if they are at that location, eg: `Gtk::CssProvider
 
 Debugger should also be able to list them under `Global > Resources`.
 
-#### Creating the binary
+#### Creating & Loading the binary
+
+You can either create and load it manually or use the `Gio#register_resource` macro that does both of them for you:
+
+##### `Gio#register_resource`
+
+We just call it in `prerequisites`:
+
+```crystal
+Gio.register_resource("data/dev.geopjr.My_app.gresource.xml", "data")
+```
+
+##### Manually
+
+###### Creating the binary
 
 The binary is being created with the use of an external tool, `glib-compile-resources`.
 
@@ -44,16 +58,12 @@ Having the above locations as examples, it should look like:
 $ glib-compile-resources --sourcedir data --target data/dev.geopjr.My_app.gresource data/dev.geopjr.My_app.gresource.xml
 ```
 
-#### Loading the binary
+###### Loading the binary
 
 There should now be a `data/dev.geopjr.My_app.gresource` binary.
 
-We load it in memory using macros and then register it in `prerequisites`:
-
-```crystal
-RESOURCE = Gio::Resource.new_from_data(GLib::Bytes.new_take({{read_file("./data/dev.geopjr.My_app.gresource")}}.bytes))
-RESOURCE._register
-```
+We load it in memory using macros and then register it in `prerequisites`.
+Follow `Gio#register_resource`'s [source](https://github.com/hugopl/gtk4.cr/blob/77c98c350166baedc44d10e2030aaf7946d04e6b/src/bindings/gio/resource.cr).
 
 ::: tip
 Remember to add `*.gresource` to your `.gitignore`

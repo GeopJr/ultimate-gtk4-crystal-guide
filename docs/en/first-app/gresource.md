@@ -15,8 +15,6 @@ Following the [GResource](../concepts/gresource) section, we'll make use of GRes
 </gresources>
 ```
 
-Let's also build it: `glib-compile-resources --sourcedir data --target data/dev.geopjr.tinystats.gresource data/dev.geopjr.tinystats.gresource.xml`
-
 ## Code
 
 ### `src/modules/prerequisites.cr`
@@ -27,8 +25,7 @@ We no longer need the `UI` and `CSS` global variables, so we can go ahead and co
 # UI         = {{read_file("./data/ui/app.ui")}}
 # CSS_STRING = {{read_file("./data/css/style.css")}}
 
-RESOURCE = Gio::Resource.new_from_data(GLib::Bytes.new({{read_file("./data/dev.geopjr.tinystats.gresource")}}.bytes))
-RESOURCE._register
+Gio.register_resource("data/dev.geopjr.tinystats.gresource.xml", "data")
 ```
 
 ### `src/tiny-stats.cr`
