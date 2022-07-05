@@ -59,4 +59,18 @@ hero:
     - theme: alt
       text: Contribute
       link: https://github.com/GeopJr/ultimate-gtk4-crystal-guide
+
+features:
+  - icon: 🔮
+    title: Crystal + GTK
+    details: Learn the basics of building GTK apps using Crystal.
+  - icon: 🧑‍💻
+    title: Hands-on tutorial
+    details: Create a system monitor app while following the tutorial.
+  - icon: 📦
+    title: Packaging
+    details: Package your app in Flatpak, Snap, Deb & more.
+  - icon: 🌐
+    title: I18N
+    details: Install & use app translations using Gettext.
 ---
