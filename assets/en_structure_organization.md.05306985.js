@@ -1,0 +1,21 @@
+import{_ as s,c as n,o as a,a as e}from"./app.4beb082a.js";const h=JSON.parse('{"title":"Organization","description":"","frontmatter":{},"headers":[],"relativePath":"en/structure/organization.md","lastUpdated":1657016119000}'),o={name:"en/structure/organization.md"},t=e(`<h1 id="organization" tabindex="-1">Organization <a class="header-anchor" href="#organization" aria-hidden="true">#</a></h1><p>This is not by any means required but it achieves maintainability. Feel free to create your own structure that &quot;feels right&quot;, this is just a suggestion.</p><p>Crystal init creates the following project structure (minus the non-app source files):</p><div class="language-"><span class="copy"></span><pre><code><span class="line"><span style="color:#A6ACCD;">.</span></span>
+<span class="line"><span style="color:#A6ACCD;">\u251C\u2500\u2500 ...</span></span>
+<span class="line"><span style="color:#A6ACCD;">\u2514\u2500\u2500 src</span></span>
+<span class="line"><span style="color:#A6ACCD;">    \u2514\u2500\u2500 my-gtk-app.cr</span></span>
+<span class="line"><span style="color:#A6ACCD;"></span></span>
+<span class="line"><span style="color:#A6ACCD;">2 directories, 6 files</span></span>
+<span class="line"><span style="color:#A6ACCD;"></span></span></code></pre></div><p>This gives you full freedom on how you&#39;ll split your project. My personal goto is to split it in:</p><ul><li><p><code>src/my-gtk-app.cr</code> - Entrypoint that contains the <code>require</code>s and some global variables</p></li><li><p><code>src/modules/</code> - Contains the actual source that gets loaded/required from the entrypoint</p></li><li><p><code>src/modules/prerequisites.cr</code> - The first file that gets loaded, contains code that needs to run first (usually Gettext, Gresource, macros and some global vars) (optional)</p></li><li><p><code>src/modules/functions/</code> - Contains functions (split into their own files that might include sub-functions) that are either used by more than one component or are too big/complex</p></li><li><p><code>src/modules/views/**</code> - Contains code per view/window/stage of the app (each split into its own file), can contain sub-folders for more complex or multi-stage views (example: <code>main.cr</code>, <code>welcome.cr</code>, <code>settings.cr</code>)</p></li><li><p><code>data/</code> - Contains files related to the app (.desktop, gresource, metainfo, icons, configs, css, .ui, scripts etc.)</p></li><li><p><code>po/</code> - Contains Gettext internationalization (i18n) files (.po, .pot, LINGUAS, POTFILES)</p></li></ul><p>With all that done, the new structure should look like this:</p><div class="language-"><span class="copy"></span><pre><code><span class="line"><span style="color:#A6ACCD;">.</span></span>
+<span class="line"><span style="color:#A6ACCD;">\u251C\u2500\u2500 ...</span></span>
+<span class="line"><span style="color:#A6ACCD;">\u251C\u2500\u2500 data</span></span>
+<span class="line"><span style="color:#A6ACCD;">\u2502\xA0\xA0 \u2514\u2500\u2500 ...</span></span>
+<span class="line"><span style="color:#A6ACCD;">\u251C\u2500\u2500 po</span></span>
+<span class="line"><span style="color:#A6ACCD;">\u2502\xA0\xA0 \u2514\u2500\u2500 ...</span></span>
+<span class="line"><span style="color:#A6ACCD;">\u2514\u2500\u2500 src</span></span>
+<span class="line"><span style="color:#A6ACCD;">    \u251C\u2500\u2500 my-gtk-app.cr</span></span>
+<span class="line"><span style="color:#A6ACCD;">    \u2514\u2500\u2500 modules</span></span>
+<span class="line"><span style="color:#A6ACCD;">        \u251C\u2500\u2500 functions</span></span>
+<span class="line"><span style="color:#A6ACCD;">        \u2502\xA0\xA0 \u2514\u2500\u2500 ...</span></span>
+<span class="line"><span style="color:#A6ACCD;">        \u251C\u2500\u2500 prerequisites.cr</span></span>
+<span class="line"><span style="color:#A6ACCD;">        \u2514\u2500\u2500 views</span></span>
+<span class="line"><span style="color:#A6ACCD;">            \u2514\u2500\u2500 ...</span></span>
+<span class="line"><span style="color:#A6ACCD;"></span></span></code></pre></div>`,8),l=[t];function p(i,c,r,d,u,C){return a(),n("div",null,l)}var y=s(o,[["render",p]]);export{h as __pageData,y as default};

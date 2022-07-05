@@ -1,0 +1,1 @@
+import{_ as s,c as n,o as a,a as o}from"./app.4beb082a.js";const A=JSON.parse('{"title":"Actions","description":"","frontmatter":{},"headers":[],"relativePath":"en/concepts/actions.md","lastUpdated":1657016119000}'),l={name:"en/concepts/actions.md"},p=o("",6),t=[p];function e(c,D,r,F,y,i){return a(),n("div",null,t)}var u=s(l,[["render",e]]);export{A as __pageData,u as default};

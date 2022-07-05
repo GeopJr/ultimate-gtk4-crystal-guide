@@ -1,0 +1,1 @@
+import{_ as s,c as n,o as a,a as l}from"./app.4beb082a.js";const i=JSON.parse('{"title":"Credits","description":"","frontmatter":{},"headers":[],"relativePath":"en/extra/credits.md","lastUpdated":1657016119000}'),p={name:"en/extra/credits.md"},o=l("",8),t=[o];function e(c,D,r,F,y,C){return a(),n("div",null,t)}var d=s(p,[["render",e]]);export{i as __pageData,d as default};

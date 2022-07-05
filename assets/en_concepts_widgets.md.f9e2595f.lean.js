@@ -1,0 +1,1 @@
+import{_ as e,c as t,o as a,a as o}from"./app.4beb082a.js";const f=JSON.parse('{"title":"Widgets","description":"","frontmatter":{},"headers":[],"relativePath":"en/concepts/widgets.md","lastUpdated":1657016119000}'),r={name:"en/concepts/widgets.md"},i=o("",6),s=[i];function n(c,l,d,p,h,g){return a(),t("div",null,s)}var m=e(r,[["render",n]]);export{f as __pageData,m as default};

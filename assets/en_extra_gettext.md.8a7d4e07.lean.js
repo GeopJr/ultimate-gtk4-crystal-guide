@@ -1,0 +1,1 @@
+import{_ as s,c as e,o,a}from"./app.4beb082a.js";const u=JSON.parse('{"title":"Gettext (i18n)","description":"","frontmatter":{},"headers":[],"relativePath":"en/extra/gettext.md","lastUpdated":1657016119000}'),t={name:"en/extra/gettext.md"},l=a("",20),n=[l];function p(c,r,i,d,F,D){return o(),e("div",null,n)}var A=s(t,[["render",p]]);export{u as __pageData,A as default};

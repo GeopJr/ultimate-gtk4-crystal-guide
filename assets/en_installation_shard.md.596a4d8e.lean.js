@@ -1,0 +1,1 @@
+import{_ as s,c as a,o as n,a as e}from"./app.4beb082a.js";const u=JSON.parse('{"title":"Shard","description":"","frontmatter":{},"headers":[],"relativePath":"en/installation/shard.md","lastUpdated":1657016119000}'),l={name:"en/installation/shard.md"},p=e("",8),t=[p];function o(c,r,i,d,h,_){return n(),a("div",null,t)}var g=s(l,[["render",o]]);export{u as __pageData,g as default};

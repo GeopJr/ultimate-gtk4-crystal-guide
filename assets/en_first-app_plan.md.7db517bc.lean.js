@@ -1,0 +1,1 @@
+import{_ as e,c as a,o as t,a as o}from"./app.4beb082a.js";const f=JSON.parse('{"title":"Plan","description":"","frontmatter":{},"headers":[],"relativePath":"en/first-app/plan.md","lastUpdated":1657016119000}'),r={name:"en/first-app/plan.md"},n=o("",6),i=[n];function s(p,l,d,h,c,_){return t(),a("div",null,i)}var g=e(r,[["render",s]]);export{f as __pageData,g as default};
