@@ -133,13 +133,14 @@ Label {
 }
 ```
 
-Just add them to our `po/POTFILES` file just as we would with UI files (as mentioned in [Extra > Gettext](./gettext) and [First App > Translations](../first-app/translations)), e.g.:
+- We first append them to our `po/POTFILES` file, just as we would with UI files (as mentioned in [Extra > Gettext](./gettext) and [First App > Translations](../first-app/translations)), e.g.:
 
 ```
 data/ui/about.blp
+data/ui/settings.blp
 ```
 
-All that's left to do is run `xgettext` to generate the strings. Blueprint files require some extra flags that are not mentioned in the other pages:
+- And then run `xgettext` to generate the strings. Blueprint files require some extra flags that are not mentioned in the other pages:
 
 ```
 $ xgettext --files-from=po/POTFILES --output=po/APP_ID.pot --from-code=UTF-8 --add-comments --keyword=_ --keyword=C_:1c,2
