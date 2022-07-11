@@ -63,7 +63,7 @@ uninstall:
 	gtk-update-icon-cache /usr/share/icons/hicolor
 ```
 
-- You can run specific script eg.: 
+- You can run specific script e.g.: 
 ```
 $ make gresource
 ```

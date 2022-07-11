@@ -16,11 +16,11 @@ Let's get started:
 
 - Run `xgettext` to extract the translatable strings into a `.pot` file - `xgettext --files-from=po/POTFILES --output=po/APP_ID.pot` - which acts as a "template" for the other translations
 
-- Create a `.po` file for a language using `msginit` eg. `msginit -i po/APP_ID.pot -o po/el.po -l el_GR.utf8`
+- Create a `.po` file for a language using `msginit` e.g. `msginit -i po/APP_ID.pot -o po/el.po -l el_GR.utf8`
 
 - Translate the strings found in the newly created `.po` file
 
-- Create a binary `.mo` using `msgfmt` eg. `msgfmt po/el.po -o po/locale/el/LC_MESSAGES/APP_ID.mo`
+- Create a binary `.mo` using `msgfmt` e.g. `msgfmt po/el.po -o po/locale/el/LC_MESSAGES/APP_ID.mo`
 
 - Move the `po/locale/` to `/usr/share/locale` (not necessary)
 
@@ -29,7 +29,7 @@ Let's get started:
 ```crystal
 Gettext.setlocale(Gettext::LC::ALL, "")
 
-# The macro allows you to set a custom env var during compile time for the mo location eg. `MY_APP_LOCALE_LOCATION="./po/locale/"`
+# The macro allows you to set a custom env var during compile time for the mo location e.g. `MY_APP_LOCALE_LOCATION="./po/locale/"`
 Gettext.bindtextdomain("APP_ID", {{env("MY_APP_LOCALE_LOCATION").nil? ? "/usr/share/locale" : env("MY_APP_LOCALE_LOCATION")}})
 Gettext.textdomain("APP_ID")
 ```
@@ -62,15 +62,15 @@ $ msgfmt --desktop --template data/APP_ID.desktop.in -d "./po" -o data/APP_ID.de
 ```
 
 ::: info
-You need to have the language you are testing with, installed (`locale -a`)
+You need to have the language you are testing with, installed (`locale -a`).
 :::
 
 
 ::: tip
-Remember to add `*.mo` to your `.gitignore`
+Remember to add `*.mo` to your `.gitignore`.
 :::
 
 
 ::: tip
-Replace `APP_ID` with your app's ID
+Replace `APP_ID` with your app's ID.
 :::

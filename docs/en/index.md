@@ -59,7 +59,7 @@ Most notably however, there are two main shards that are responsible for the gre
 - [Programming Crystal](https://pragprog.com/book/crystal/programming-crystal) - PragProg book to start your Crystal journey
 
 ::: info
-from: [https://github.com/veelenga/awesome-crystal](https://github.com/veelenga/awesome-crystal)
+from: [https://github.com/veelenga/awesome-crystal](https://github.com/veelenga/awesome-crystal).
 :::
 
 ## Not interested?

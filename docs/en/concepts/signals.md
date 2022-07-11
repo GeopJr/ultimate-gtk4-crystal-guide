@@ -24,5 +24,5 @@ end
 [![Gif of the above code in action](/assets/en/signals-0.gif)](/assets/en/signals-0.webm)
 
 ::: info
-Click the gif for a full resolution webm)
+Click the gif for a full resolution webm).
 :::

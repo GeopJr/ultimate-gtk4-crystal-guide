@@ -8,7 +8,7 @@ GResource is a resource bundle that includes application data like:
 
 There are quite a few ways to bundle such assets in Crystal (including manually loading them using macros), however GResource offers something important that they don't - being integrated with GTK.
 
-That allows you to eg. directly set css & icons to those loaded from the bundle (`Widget#icon_name = "path/in/bundle/icon.svg"`).
+That allows you to e.g. directly set css & icons to those loaded from the bundle (`Widget#icon_name = "path/in/bundle/icon.svg"`).
 
 To get started, create a `data/APP_ID.gresource.xml` with the following content:
 
@@ -25,7 +25,7 @@ To get started, create a `data/APP_ID.gresource.xml` with the following content:
 
 That will bundle the following files: `data/css/style.css`, `icons/my_app.svg` & `ui/my_app.ui`, compress them and strip their whitespace.
 
-You should replace `/path/for/bundle` with the path you want, usually the APP_ID (eg. `dev.geopjr.My_app` => `/dev/geopjr/My_app`).
+You should replace `/path/for/bundle` with the path you want, usually the APP_ID (e.g. `dev.geopjr.My_app` => `/dev/geopjr/My_app`).
 
 And now you can load them as if they are at that location, eg: `Gtk::CssProvider#load_from_resource("/dev/geopjr/My_app/css/style.css")`.
 
@@ -66,9 +66,9 @@ We load it in memory using macros and then register it in `prerequisites`.
 Follow `Gio#register_resource`'s [source](https://github.com/hugopl/gtk4.cr/blob/77c98c350166baedc44d10e2030aaf7946d04e6b/src/bindings/gio/resource.cr).
 
 ::: tip
-Remember to add `*.gresource` to your `.gitignore`
+Remember to add `*.gresource` to your `.gitignore`.
 :::
 
 ::: tip
-Replace `APP_ID` with your app's ID
+Replace `APP_ID` with your app's ID.
 :::

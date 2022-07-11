@@ -11,7 +11,7 @@ While Glade is _a bit behind_, it's still very useful for UI design on GTK4. Wit
 [![Gif of creating a window using Glade](/assets/en/ui-design-0.gif)](/assets/en/ui-design-0.webm)
 
 ::: info
-Click the gif for a full resolution webm)
+Click the gif for a full resolution webm).
 :::
 
 Glade can export your UIs in various formats but we mostly want them in GtkBuilder/.ui.
@@ -25,7 +25,7 @@ Cambalache is aiming to replace Glade. While it's already very useful, it might 
 [![Gif of creating a window using Cambalache](/assets/en/ui-design-1.gif)](/assets/en/ui-design-1.webm)
 
 ::: info
-Click the gif for a full resolution webm)
+Click the gif for a full resolution webm).
 :::
 
 - Writing GtkBuilder files manually
@@ -303,7 +303,7 @@ It's ok to include placeholder text and containers as they can be overwritten in
 </interface>
 ```
 
-::: tip
+:::tip
 You can always split a ui file into smaller ui files for maintainability, however tiny-stats is too tiny and doesn't really require that.
 :::
 
