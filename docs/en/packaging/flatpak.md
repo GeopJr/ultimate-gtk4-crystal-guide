@@ -75,7 +75,7 @@ You can also pass the `-j` format if you want it in json (`crystal run shards_to
 
 Follow the instructions and audit the postinstall scripts.
 
-Now on the script writing, it depends on your package. You will have to install and build all dependencies as well as manage Crystal and shard versions. I don't want to focus too much on it so you are more than welcome to take a look at [Collision's config](https://raw.githubusercontent.com/GeopJr/Hashbrown/main/data/dev.geopjr.Hashbrown.json).
+Now on the script writing, it depends on your package. You will have to install and build all dependencies as well as manage Crystal and shard versions. I don't want to focus too much on it so you are more than welcome to take a look at [Collision's config](https://raw.githubusercontent.com/GeopJr/Collision/main/data/dev.geopjr.Collision.json).
 
 ::: tip
 Replace `APP_ID` with your app's ID.
