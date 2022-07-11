@@ -6,7 +6,7 @@ You can get the Crystal bindings for it and explore its methods at: [https://git
 
 There are three filetypes associated with it: `.pot`, `.po` & `.mo`. The last one is binary.
 
-Let's get started:
+## Getting Started
 
 - Create a `po/` folder if you haven't already
 
@@ -14,13 +14,25 @@ Let's get started:
 
 - Create a `po/POTFILES` file that includes the paths of the files we should extract strings from (usually all .ui files, metainfo & desktop)
 
-- Run `xgettext` to extract the translatable strings into a `.pot` file - `xgettext --files-from=po/POTFILES --output=po/APP_ID.pot` - which acts as a "template" for the other translations
+- Run `xgettext` to extract the translatable strings into a `.pot` file, which acts as a "template" for the other translations: 
 
-- Create a `.po` file for a language using `msginit` e.g. `msginit -i po/APP_ID.pot -o po/el.po -l el_GR.utf8`
+```
+$ xgettext --files-from=po/POTFILES --output=po/APP_ID.pot
+```
+
+- Create a `.po` file for a language using `msginit` e.g.:
+
+```
+$ msginit -i po/APP_ID.pot -o po/el.po -l el_GR.utf8
+```
 
 - Translate the strings found in the newly created `.po` file
 
-- Create a binary `.mo` using `msgfmt` e.g. `msgfmt po/el.po -o po/locale/el/LC_MESSAGES/APP_ID.mo`
+- Create a binary `.mo` using `msgfmt` e.g.:
+
+```
+$ msgfmt po/el.po -o po/locale/el/LC_MESSAGES/APP_ID.mo
+```
 
 - Move the `po/locale/` to `/usr/share/locale` (not necessary)
 
@@ -45,9 +57,13 @@ label.text = Gettext.gettext("Hello World")
 # LANG="el" => "Γειά σου Κόσμε"
 ```
 
-#### Translating .desktop and metainfo files
+## Translating .desktop and metainfo files
 
-Translating those files is just as easy, for the sake of not replacing themselves, add the `.in` extension (`APP_ID.dekstop.in` & `APP_ID.metainfo.xml.in`). (Update it in the `POTFILES` file too).
+Translating those files is just as easy, for the sake of not replacing themselves, add the `.in` extension (`APP_ID.dekstop.in` & `APP_ID.metainfo.xml.in`).
+
+::: tip
+Don't forget to update them in the `POTFILES` file too.
+:::
 
 Now all you have to do is run:
 

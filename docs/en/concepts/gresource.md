@@ -10,7 +10,9 @@ There are quite a few ways to bundle such assets in Crystal (including manually 
 
 That allows you to e.g. directly set css & icons to those loaded from the bundle (`Widget#icon_name = "path/in/bundle/icon.svg"`).
 
-To get started, create a `data/APP_ID.gresource.xml` with the following content:
+## Getting Started
+
+- Create a `data/APP_ID.gresource.xml` with the following content:
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -23,19 +25,23 @@ To get started, create a `data/APP_ID.gresource.xml` with the following content:
 </gresources>
 ```
 
-That will bundle the following files: `data/css/style.css`, `icons/my_app.svg` & `ui/my_app.ui`, compress them and strip their whitespace.
+- That will bundle the following files: `data/css/style.css`, `icons/my_app.svg` & `ui/my_app.ui`, compress them and strip their whitespace.
 
-You should replace `/path/for/bundle` with the path you want, usually the APP_ID (e.g. `dev.geopjr.My_app` => `/dev/geopjr/My_app`).
+- You should replace `/path/for/bundle` with the path you want, usually the APP_ID (e.g. `dev.geopjr.My_app` => `/dev/geopjr/My_app`).
 
-And now you can load them as if they are at that location, eg: `Gtk::CssProvider#load_from_resource("/dev/geopjr/My_app/css/style.css")`.
+- And now you can load them as if they are at that location, e.g.: 
+
+```crystal
+Gtk::CssProvider#load_from_resource("/dev/geopjr/My_app/css/style.css")`.
+```
 
 Debugger should also be able to list them under `Global > Resources`.
 
-#### Creating & Loading the binary
+## Creating & Loading the binary
 
 You can either create and load it manually or use the `Gio#register_resource` macro that does both of them for you:
 
-##### `Gio#register_resource`
+### `Gio#register_resource`
 
 We just call it in `prerequisites`:
 
@@ -43,9 +49,9 @@ We just call it in `prerequisites`:
 Gio.register_resource("data/dev.geopjr.My_app.gresource.xml", "data")
 ```
 
-##### Manually
+### Manually
 
-###### Creating the binary
+#### Creating the binary
 
 The binary is being created with the use of an external tool, `glib-compile-resources`.
 
@@ -58,7 +64,7 @@ Having the above locations as examples, it should look like:
 $ glib-compile-resources --sourcedir data --target data/dev.geopjr.My_app.gresource data/dev.geopjr.My_app.gresource.xml
 ```
 
-###### Loading the binary
+#### Loading the binary
 
 There should now be a `data/dev.geopjr.My_app.gresource` binary.
 
