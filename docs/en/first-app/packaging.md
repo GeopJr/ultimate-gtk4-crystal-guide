@@ -10,7 +10,11 @@ PREFIX ?= /usr
 PO_LOCATION ?= po 
 LOCALE_LOCATION ?= /share/locale 
 
-all: gresource desktop metainfo build
+all: desktop metainfo bindings build
+
+bindings: 
+	$(CRYSTAL_LOCATION)shards install
+	./bin/gi-crystal
 
 build:
 	MY_APP_LOCALE_LOCATION="$(PREFIX)$(LOCALE_LOCATION)" $(CRYSTAL_LOCATION)shards build -Dpreview_mt --release --no-debug
