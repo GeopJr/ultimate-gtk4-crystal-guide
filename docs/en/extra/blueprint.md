@@ -133,7 +133,7 @@ Label {
 }
 ```
 
-Then add them to our `po/POTFILES` file just as we would with UI files (as mentioned in [Extra > Gettext](./gettext) and [First App > Translations](../first-app/translations)), e.g.:
+Just add them to our `po/POTFILES` file just as we would with UI files (as mentioned in [Extra > Gettext](./gettext) and [First App > Translations](../first-app/translations)), e.g.:
 
 ```
 data/ui/about.blp
