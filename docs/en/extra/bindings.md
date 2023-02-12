@@ -6,7 +6,7 @@ Generating beautiful bindings is quite easy with [GI Crystal](https://github.com
 
 ```yaml
 developer_dependencies:
-  gtk:
+  gi-crystal:
     github: hugopl/gi-crystal
 ```
 
