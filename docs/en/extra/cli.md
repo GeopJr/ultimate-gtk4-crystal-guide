@@ -47,7 +47,6 @@ app.open_signal.connect do |files, hint|
   label = "File: \"#{file.basename}\" is #{filesize_h} kb"
 
   # We need to manually emit the activate signal
-  # and since 
   app.activate
 
   nil
