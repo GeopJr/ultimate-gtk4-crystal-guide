@@ -84,6 +84,7 @@ function sidebarEn() {
                 { text: 'Parallelism & Concurrency', link: '/en/extra/parallelism-and-concurrency' },
                 { text: 'Gettext (i18n)', link: '/en/extra/gettext' },
                 { text: 'Makefile', link: '/en/extra/makefile' },
+                { text: 'CLI', link: '/en/extra/cli' },
                 { text: 'Blueprint', link: '/en/extra/blueprint' },
                 { text: 'Credits', link: '/en/extra/credits' },
                 { text: 'Libadwaita', link: '/en/extra/libadwaita' },
