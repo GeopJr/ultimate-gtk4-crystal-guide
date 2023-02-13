@@ -9,7 +9,7 @@ require "gtk4"
 
 label = "No open file"
 
-app = Gtk::Application.new("dev.geopjr.filesizeviewer", Gio::ApplicationFlags::HandlesOpen)
+app = Gtk::Application.new("dev.geopjr.filesizeviewer", Gio::ApplicationFlags::None)
 
 app.activate_signal.connect do
   window = Gtk::ApplicationWindow.new(app)
@@ -37,7 +37,11 @@ We are going to use the [`Gio::Application#open_signal`](https://hugopl.github.i
 While it's possible to get the file path from ARGV, it's recommended to use the open_signal as it returns a list of `Gio::File` & supports xdg-portals, allowing you to access files outside of sandboxed environments like flatpak.
 :::
 
-With that said, all we have to do is connect to the signal, grab the first file from the list, query its stats and set the label to that:
+With that said, all we have to do is let GTK know that we want to handle the open signal, connect to the signal, grab the first file from the list, query its stats and set the label to that:
+
+```crystal
+app = Gtk::Application.new("dev.geopjr.filesizeviewer", Gio::ApplicationFlags::HandlesOpen) # <--
+```
 
 ```crystal
 app.open_signal.connect do |files, hint|
