@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+    <template class="CopyBoxWidget" parent="GtkBox">
+        <property name="orientation">vertical</property>
+        <property name="spacing">6</property>
+        <property name="valign">center</property>
+        <property name="halign">center</property>
+    </template>
+</interface>

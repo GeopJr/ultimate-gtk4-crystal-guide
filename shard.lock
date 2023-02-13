@@ -1,0 +1,14 @@
+version: 2.0
+shards:
+  gi-crystal:
+    git: https://github.com/hugopl/gi-crystal.git
+    version: 0.15.0+git.commit.b44a4c58e6b6a524dba63e9d5f4453fd01a13093
+
+  gtk4:
+    git: https://github.com/hugopl/gtk4.cr.git
+    version: 0.12.0+git.commit.6609ed6fa1ced1fe3f72a230f941feb99ad9a34d
+
+  version_from_shard:
+    git: https://github.com/hugopl/version_from_shard.git
+    version: 1.2.5
+

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gresources>
+    <gresource prefix="/dev/geopjr/reverse">
+        <file compressed="true" preprocess="xml-stripblanks">ui/copy_widget.ui</file>
+        <file compressed="true" preprocess="xml-stripblanks">ui/copy_box.ui</file>
+    </gresource>
+</gresources>
