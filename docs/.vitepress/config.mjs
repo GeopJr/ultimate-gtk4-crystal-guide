@@ -3,6 +3,9 @@ export default {
     description: 'Learn how to create premium GTK4 apps in Crystal',
     lastUpdated: true,
     themeConfig: {
+        search: {
+            provider: 'local'
+        },
         editLink: {
             pattern: 'https://github.com/GeopJr/ultimate-gtk4-crystal-guide/edit/main/docs/:path',
             text: 'Edit this page on GitHub'
@@ -12,7 +15,7 @@ export default {
         },
         socialLinks: [
             { icon: 'github', link: 'https://github.com/GeopJr/ultimate-gtk4-crystal-guide' },
-            { icon: 'twitter', link: 'https://twitter.com/GeopJr1312/' }
+            { icon: 'mastodon', link: 'https://tech.lgbt/@GeopJr' }
         ],
         nav: [
             {

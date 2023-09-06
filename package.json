@@ -7,10 +7,7 @@
     "docs:serve": "vitepress serve docs"
   },
   "devDependencies": {
-    "flexsearch": "^0.7.31",
-    "markdown-it": "^13.0.1",
-    "vitepress": "1.0.0-alpha.45",
-    "vitepress-plugin-search": "1.0.4-alpha.19"
+    "vitepress": "1.0.0-rc.10"
   },
   "pnpm": {
     "peerDependencyRules": {
