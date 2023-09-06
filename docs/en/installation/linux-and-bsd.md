@@ -28,7 +28,7 @@ Listed below are some examples for the major distributions:
 ## Fedora
 
 ```
-# dnf install gtk4-devel gtk-doc
+# dnf install gtk4-devel gtk-doc gobject-introspection-devel
 ```
 
 ## Debian
