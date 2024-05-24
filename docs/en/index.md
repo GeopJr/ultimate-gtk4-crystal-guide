@@ -55,7 +55,6 @@ Most notably however, there are two main shards that are responsible for the gre
 - [crystal-koans](https://github.com/ilmanzo/crystal-koans) - Learn Crystal by writing unit tests
 - [crystal-lang.org](https://crystal-lang.org) - Official language site
 - [devdocs.io](https://devdocs.io/crystal/) - API Documentation Browser with Crystal support
-- [getgood.at](https://getgood.at/in-a-day/crystal) - Learn Crystal in a Day
 - [Programming Crystal](https://pragprog.com/book/crystal/programming-crystal) - PragProg book to start your Crystal journey
 
 ::: info
