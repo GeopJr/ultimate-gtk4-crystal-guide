@@ -4,11 +4,11 @@ In this lesson you will learn how to ask the user to select a file, load the fil
 
 ![Screenshot of text-viewer in light mode in an empty state](/assets/en/opening_files.png)
 
-# Add an “Open” button
+## Add an “Open” button
 
 In order to open a file, you need to let the user select it. You can follow these instructions to add a **button** to the window’s header bar that will open a file selection dialog.
 
-## Update the UI definition
+### Update the UI definition
 
 1. Open the `text-viewer-window.ui` file
 1. Find the **object** definition for the [`Adw::HeaderBar`](https://libadwaita.geopjr.dev/docs/Adw/HeaderBar.html) widget
@@ -34,7 +34,7 @@ In order to open a file, you need to let the user select it. You can follow thes
 4. The button has the `open_button` identifier, so you can bind it in the window template.
 5. The button also has an **action-name** property set to **win.open**; this action will be activated when the user presses the button.
 
-## Bind the template in your source code
+### Bind the template in your source code
 
 1. Open the `window.cr` file
 1. Add the `open_button` widget to the `Text::Viewer::Window` class:
@@ -67,7 +67,7 @@ module Text::Viewer
 end
 ```
 
-# Add the “Open” action
+## Add the “Open” action
 
 Add the `open` **action** to the `Text::Viewer::Window` class.
 
@@ -125,7 +125,7 @@ end
     #...
 ```
 
-# Select a file
+## Select a file
 
 Now that you have added action, you must define the function that will be called when the action is activated.
 
@@ -160,7 +160,7 @@ Now that you have added action, you must define the function that will be called
     end
 ```
 
-# Read & Show the contents of a file
+## Read & Show the contents of a file
 
 Instead of relying on Gio to read the file, you will use Crystal's IO operations. In the `Window` class in the `window.cr` file, create the following method:
 
@@ -183,7 +183,7 @@ Instead of relying on Gio to read the file, you will use Crystal's IO operations
     end
 ```
 
-# Update the title of the window
+## Update the title of the window
 
 Since the application now is showing the contents of a specific file, you should ensure that the user interface reflects this new state. One way to do this is to update the title of the window with the name of the file.
 
@@ -213,7 +213,7 @@ Since the name of the file uses the raw encoding for files provided by the opera
     end
 ```
 
-# Add the “Open” shortcut to the Keyboard Shortcuts help
+## Add the “Open” shortcut to the Keyboard Shortcuts help
 
 The Keyboard Shortcuts help dialog is part of the template. GTK automatically handles its creation and the action that presents it to the user.
 

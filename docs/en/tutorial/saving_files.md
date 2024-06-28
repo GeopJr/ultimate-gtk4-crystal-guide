@@ -2,7 +2,7 @@
 
 In this lesson you will learn how to add a menu entry with a key shortcut, ask the user to select a file for saving the [`Gtk::TextBuffer`](https://libadwaita.geopjr.dev/docs/Gtk/TextBuffer.html) contents, and save a file.
 
-# Add the “Save As” menu item
+## Add the “Save As” menu item
 
 1. Open the UI definition file for your window and find the `primary_menu` menu definition at the bottom of the file
 2. Remove the “Preferences” menu item, as we are not going to need it
@@ -29,7 +29,7 @@ In this lesson you will learn how to add a menu entry with a key shortcut, ask t
 
 The “Save as” menu item is bound to the `win.save-as` action; this means that activating the menu item will activate the `save-as` action registered on the `Text::Viewer::Window` window.
 
-# Add the “Save As” action
+## Add the “Save As” action
 
 1. Open the `window.cr` file, and find the class constructor of the `Text::Viewer::Window` widget
 1. Create the `save-as` action, connect a callback to its `activate` signal, and add the action to the window
@@ -64,7 +64,7 @@ The “Save as” menu item is bound to the `win.save-as` action; this means tha
     end
 ```
 
-# Select a file
+## Select a file
 
 1. In the `activate` callback method for the `save-as` action, create a file selection dialog using the `Gtk::FileChooserAction::Save` action, and connect to its `response` signal
 
@@ -95,7 +95,7 @@ The “Save as” menu item is bound to the `win.save-as` action; this means tha
     end
 ```
 
-# Save the contents of the text buffer
+## Save the contents of the text buffer
 
 In the `save_file` method, retrieve the contents of the [`Gtk::TextBuffer`](https://libadwaita.geopjr.dev/docs/Gtk/TextBuffer.html) using the start and end [`Gtk::TextIter`](https://libadwaita.geopjr.dev/docs/Gtk/TextIter.html) as the bounds of the buffer, then save it to the [`Gio::File`](https://libadwaita.geopjr.dev/docs/Gio/File.html)'s `Path` using Crystal's File IO
 
@@ -122,7 +122,7 @@ In the `save_file` method, retrieve the contents of the [`Gtk::TextBuffer`](http
     end
 ```
 
-# Add a key shortcut for the “Save As” action
+## Add a key shortcut for the “Save As” action
 
 1. Open the `text-viewer.cr` source file and find the constructor for the `Text::Viewer::App` class
 1. Add <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>S</kbd> as the accelerator shortcut for the `win.save-as` action
@@ -142,7 +142,7 @@ In the `save_file` method, retrieve the contents of the [`Gtk::TextBuffer`](http
     #...
 ```
 
-# Add the “Save As” shortcut to the Keyboard Shortcuts help
+## Add the “Save As” shortcut to the Keyboard Shortcuts help
 
 1. Find the `help-overlay.ui` file in the sources directory
 1. Find the `GtkShortcutsGroup` definition

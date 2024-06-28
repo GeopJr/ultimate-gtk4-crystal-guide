@@ -4,7 +4,7 @@ GNOME applications will respect the system setting for the light or dark theme. 
 
 ![Screenshot of text-viewer in dark mode with the 'COPYING' file open](/assets/en/dark_mode.png)
 
-# Add the “Dark Mode” item to the application’s menu
+## Add the “Dark Mode” item to the application’s menu
 
 1. Open the UI definition file for the `Text::Viewer::Window` widget
 1. Add a menu item for the `app.dark` action, called `Dark Mode`
@@ -22,7 +22,7 @@ GNOME applications will respect the system setting for the light or dark theme. 
     </item>
 ```
 
-# Add the dark mode action to the application
+## Add the dark mode action to the application
 
 1. Open the `Text::View::App` source
 1. Find the `Text::View::App` class constructor
@@ -76,11 +76,11 @@ dark_mode_action.change_state_signal.connect do |new_state|
 end
 ```
 
-# Store the dark mode state as a setting
+## Store the dark mode state as a setting
 
 If you want to preserve the chosen color scheme across sessions you can store it inside **GSettings**, which you added in [Saving The Application State](./saving_state).
 
-## Add a new key to the settings schema
+### Add a new key to the settings schema
 
 1. Open the `com.example.TextViewer.gschema.xml` file
 1. Add a `dark-mode` boolean key
@@ -109,7 +109,7 @@ If you want to preserve the chosen color scheme across sessions you can store it
 You'll need to re-install and compile the schema.
 :::
 
-## Add GSettings to the application
+### Add GSettings to the application
 
 Add a [`Gio::Settings`](https://libadwaita.geopjr.dev/docs/Gio/Settings.html) instance to your `Text::Viewer::App` class
 
@@ -123,7 +123,7 @@ Add a [`Gio::Settings`](https://libadwaita.geopjr.dev/docs/Gio/Settings.html) in
       @settings = Gio::Settings.new("com.example.TextViewer")
 ```
 
-## Set the initial state for the color scheme
+### Set the initial state for the color scheme
 
 1. Retrieve the value of the `dark-mode` **GSettings** key
 1. Set the color scheme using the key’s value
@@ -148,7 +148,7 @@ Add a [`Gio::Settings`](https://libadwaita.geopjr.dev/docs/Gio/Settings.html) in
       #...
 ```
 
-## Save the color scheme when it changes
+### Save the color scheme when it changes
 
 Update the `dark-mode` **GSettings** key using the state of the `dark-mode` action whenever it changes.
 

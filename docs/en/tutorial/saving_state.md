@@ -2,7 +2,7 @@
 
 The aim of this lesson is to illustrate how to define new settings starting from their schema, and bind them to properties on your window in order to save and restore the size and state of the window across different sessions.
 
-# Add new keys to the settings schema
+## Add new keys to the settings schema
 
 Settings are stored in a database, and each key is described inside a schema; the schema contains the type of the value associated with the key, as well as the default value of the key.
 
@@ -29,7 +29,7 @@ Settings are stored in a database, and each key is described inside a schema; th
 The schema needs to be installed before your app can use it. Use the Makefile which takes care of it `# make schema`.
 :::
 
-# Use GSettings
+## Use GSettings
 
 **GSettings** is the object that watches the keys for a specific schema id. You use the GSettings API to access the value of the keys, as well as get notified of changes in the settings.
 
@@ -55,7 +55,7 @@ The schema needs to be installed before your app can use it. Use the Makefile wh
     #...
 ```
 
-# Bind the settings to the window state properties
+## Bind the settings to the window state properties
 
 Keys inside a **GSettings** schema can be bound to **GObject** properties; bound properties will be automatically saved inside the settings database whenever they change, and will be restored at creation time.
 

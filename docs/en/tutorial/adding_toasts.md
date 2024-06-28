@@ -6,11 +6,11 @@ In this lesson, you will learn how to add a toast overlay to the text viewer app
 
 ![Screenshot of text-viewer in light mode with the 'COPYING' file open. A toast is visible at the bottom with the content 'Opened "COPYING"'](/assets/en/adding_toasts.png)
 
-# Add a toast overlay
+## Add a toast overlay
 
 Toasts are displayed by an overlay, which must contain the rest of the application’s content area.
 
-## Update the UI definition file
+### Update the UI definition file
 
 1. Find the UI definition file for `Text::Viewer::Window`
 1. Find the definition for the `GtkScrolledWindow` that contains the **main text area**
@@ -38,7 +38,7 @@ Toasts are displayed by an overlay, which must contain the rest of the applicati
 </property>
 ```
 
-## Bind the overlay in the source
+### Bind the overlay in the source
 
 Add the `toast_overlay` widget to the `Text::Viewer::Window` class
 
@@ -78,11 +78,11 @@ module Text::Viewer
       #...
 ```
 
-# Show toasts
+## Show toasts
 
 Toasts are especially useful for notifying the user that an asynchronous operation has terminated. Opening a file and saving it are two typical use cases for a notification.
 
-## Notify after file operations
+### Notify after file operations
 
 1. Find the `open_file` method for `Text::Viewer::Window`
 1. Add a toast at the end of the method

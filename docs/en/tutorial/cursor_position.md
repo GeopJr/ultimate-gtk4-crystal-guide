@@ -4,9 +4,9 @@ In this lesson you will learn how to use `Gtk::TextBuffer` to be notified of the
 
 ![Screenshot of text-viewer in light mode in an empty state. On the headerbar there's the text 'Ln 0, Col 0'](/assets/en/cursor_position.png)
 
-# Add the cursor position indicator
+## Add the cursor position indicator
 
-## Update the UI definition
+### Update the UI definition
 
 1. Add a `GtkLabel` as the child of the `AdwHeaderBar` in the UI definition file for the `Text::Viewer::Window` class; the label must be packed as a child of type `end`, and placed after the `GtkMenuButton`
 1. The label has the `cursor_pos` identifier that is going to be used to bind it in the `Text-Viewer-Window` template
@@ -43,7 +43,7 @@ In this lesson you will learn how to use `Gtk::TextBuffer` to be notified of the
 </object>
 ```
 
-## Bind the template in your source code
+### Bind the template in your source code
 
 Add the cursor_pos widget to the `Text::Viewer::Window` class
 
@@ -83,7 +83,7 @@ module Text::Viewer
     #...
 ```
 
-# Update the cursor position label
+## Update the cursor position label
 
 1. Retrieve the [`Gtk::TextBuffer`](https://libadwaita.geopjr.dev/docs/Gtk/TextBuffer.html) from the `main_text_view` widget and connect a callback to the `notify::cursor-position` signal to receive a notification every time the `cursor-position` property changes:
 

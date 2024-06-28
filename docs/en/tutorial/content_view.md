@@ -15,7 +15,7 @@ Any GNOME application is composed of a hierarchy of UI elements, called widgets;
 1. Currently, the main content is provided by a [`Gtk::Label`](https://libadwaita.geopjr.dev/docs/Gtk/Label.html) widget, with a “Hello, World!” label
 1. Outside the template block, you can find the definition of the menu using the menu element
 
-# Set the title of the main window
+## Set the title of the main window
 
 1. Find the `Text-Viewer-Window` definition
 1. Find the property elements that define the default width and height of the window
@@ -30,7 +30,7 @@ Any GNOME application is composed of a hierarchy of UI elements, called widgets;
     <object class="AdwToolbarView">
 ```
 
-# Set the development style for the main window
+## Set the development style for the main window
 
 The `devel` style communicate to the user that the application is a development snapshot.
 
@@ -49,7 +49,7 @@ The `devel` style communicate to the user that the application is a development 
     <object class="AdwToolbarView">
 ```
 
-# Add a scrollable container
+## Add a scrollable container
 
 Follow these steps to add a **scrollable container** to the window:
 
@@ -74,7 +74,7 @@ The definition of the scrollable container has the following properties:
 - `margin-top`, `margin-bottom` tell the container to add a margin of six pixels at the top and bottom edges, respectively
 - `margin-start` and `margin-end` tell the container to add a margin of six pixels at the leading and trailing edges, respectively; the leading and trailing edges are determined by the text direction
 
-# Add a text view
+## Add a text view
 
 Follow these steps to add a **text view widget** to the scrollable container:
 
@@ -115,7 +115,7 @@ Follow these steps to add a **text view widget** to the scrollable container:
 </property>
 ```
 
-# Bind the text view in the source code
+## Bind the text view in the source code
 
 Templates represent the structure of a UI bound to a specific class; in this case, the UI definition of the **Text-Viewer-Window** class. In order to access a UI element from within the class, you must assign an identifier, using the id XML attribute, to the definition in the XML, and tell GTK to bind the object with the same identifier to a member in the instance structure.
 
