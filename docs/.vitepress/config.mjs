@@ -81,6 +81,21 @@ function sidebarEn() {
             ]
         },
         {
+            text: 'Beginner\'s Guide',
+            collapsible: true,
+            items: [
+                { text: 'Introduction', link: '/en/tutorial/introduction' },
+                { text: 'Getting Started', link: '/en/tutorial/getting_started' },
+                { text: 'Adding A Content View', link: '/en/tutorial/content_view' },
+                { text: 'Loading Content From A File', link: '/en/tutorial/opening_files' },
+                { text: 'Showing The Cursor Position', link: '/en/tutorial/cursor_position' },
+                { text: 'Saving The Content To A File', link: '/en/tutorial/saving_files' },
+                { text: 'Saving The Application State', link: '/en/tutorial/saving_state' },
+                { text: 'Notifying The User With Toasts', link: '/en/tutorial/adding_toasts' },
+                { text: 'Forcing The Dark Color Scheme', link: '/en/tutorial/dark_mode' },
+            ]
+        },
+        {
             text: 'Extra',
             collapsible: true,
             items: [
